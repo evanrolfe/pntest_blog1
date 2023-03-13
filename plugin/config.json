@@ -1,0 +1,10 @@
+{
+  "Name": "mynetwork",
+  "Addr": "tcp://127.0.0.1:8010",
+  "Args": {
+    "Description": "my",
+    "Name": "my-plugin",
+    "Settable": null,
+    "Value": null
+  }
+}
