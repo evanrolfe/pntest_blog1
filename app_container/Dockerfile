@@ -8,7 +8,7 @@ ADD ./ /app
 
 RUN apt-get update
 RUN apt-get upgrade -qy
-RUN apt-get install curl -qy
+RUN apt-get install curl iproute2 inetutils-ping net-tools traceroute tcpdump -qy
 
 RUN pip install --upgrade pip
 RUN pip install requests
