@@ -1,0 +1,66 @@
+[
+    {
+        "Name": "evan",
+        "Id": "e985b298b42928e3a0e74817b51b676e62046a77a6c0118ea6438f55fd641562",
+        "Created": "2023-03-13T17:02:42.199888548Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "10.0.1.1/24",
+                    "Gateway": "10.0.1.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "4194def0129d9a5d3a551161bc04a1f1c16a18e3579cb7f9599bfe22f26ab617": {
+                "Name": "vigorous_northcutt",
+                "EndpointID": "dd3a2d12f51ec4fe131444be8875eeeddfdf18b1d4c82f020cc51e32a496fb1a",
+                "MacAddress": "02:42:0a:00:01:05",
+                "IPv4Address": "10.0.1.5/24",
+                "IPv6Address": ""
+            },
+            "565ab2edbfb7324bba2456fcdf0746691beef3dde6a2a4a280aba5b9e5180414": {
+                "Name": "zealous_lamport",
+                "EndpointID": "8be5355f33a296b06729ef082871a418e87b981427ca0a4ae29434f4ca360cc2",
+                "MacAddress": "02:42:0a:00:01:02",
+                "IPv4Address": "10.0.1.2/24",
+                "IPv6Address": ""
+            },
+            "70fadbb42ef685dd5ba76b606e5c8760d5d0791b046783de359c23874d259ff1": {
+                "Name": "dazzling_cori",
+                "EndpointID": "a7fc487a586e107b5f4639ce57ff608cc0c2867d4ee3f460daf4135d1a3ae741",
+                "MacAddress": "02:42:0a:00:01:06",
+                "IPv4Address": "10.0.1.6/24",
+                "IPv6Address": ""
+            },
+            "7a46ba9a70c382d6ad38242cb8cde2f10c2b36d1a1dc81f3a9a944b984c29c54": {
+                "Name": "interesting_noyce",
+                "EndpointID": "eae48c39acca36b3db1961169366a2345c5b227939c9529be5fc9152b7bf8c9f",
+                "MacAddress": "02:42:0a:00:01:04",
+                "IPv4Address": "10.0.1.4/24",
+                "IPv6Address": ""
+            },
+            "f49d71982f8647ec57c66ed652138ccb36b5ab7cb3c0fbdedf36a284af93df8f": {
+                "Name": "infallible_keldysh",
+                "EndpointID": "edc9cedcc3ae43332bc4ddd48166dc345ccdb37c28fe68c076b582ee9b21aa46",
+                "MacAddress": "02:42:0a:00:01:03",
+                "IPv4Address": "10.0.1.3/24",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {},
+        "Labels": {}
+    }
+]

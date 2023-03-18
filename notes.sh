@@ -32,6 +32,8 @@ docker run -d --hostname three -p 8090:8090 --network evan --ip 10.0.1.3 -i -t m
 
 docker run -d --hostname four -p 8010:8090 --network evan --ip 10.0.1.4 -i -t my_server:latest
 
+docker run -d --hostname five -p 8020:8090 --network evan --ip 10.0.1.5 -i -t my_server:latest
+
 #===============================================================================
 # configure the routing policiy on the host machine
 #===============================================================================
@@ -58,19 +60,34 @@ sudo ip route add 10.0.1.3 via 10.0.1.2 table 200
 # route external traffic:
 docker exec --privileged -it 3e78a70fa578 bash
 ip route del default
-ip route add default via 10.0.1.2
+ip route add default via 10.0.1.2 dev eth0
 
 # route container2container traffic:
 ip rule add from 10.0.1.0/24 table 200
 ip route add default via 10.0.1.2 table 200
 
-#===============================================================================
-# TODO
-#===============================================================================
-- create a rule which keeps 10.0.1.2 (proxy) using 10.0.1.1 as the gateway
-- BUT forwards 10.0.1.3 to 10.0.1.2
+# route gateway traffic (requests coming from the host machine)
+ip rule add from 10.0.1.1/32 table 100
+ip route add default via 10.0.1.1 table 100
 
-see:
-https://www.linuxserver.io/blog/routing-docker-host-and-container-traffic-through-wireguard
+#===============================================================================
+# FINAL SOLUTION
+#===============================================================================
+# This seems to cover everything!
 
-- show table numbers: cat /etc/iproute2/rt_tables
+docker exec --privileged -it 3e78a70fa578 bash
+ip route del default
+ip route add default via 10.0.1.2 dev eth1
+
+
+#===============================================================================
+# Test removing / connecting to evan network
+#===============================================================================
+docker run -d --hostname six -p 8030:8090 --ip 10.0.1.6 -i -t my_server:latest
+docker network disconnect bridge 70fadbb42ef6
+docker network connect evan 70fadbb42ef6
+docker exec --privileged -it 70fadbb42ef6 bash
+ip route del default
+ip route add default via 10.0.1.2 dev eth1
+
+# NOTE: WHy is it eth1 not eth??

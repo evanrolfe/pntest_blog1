@@ -1,0 +1,56 @@
+[
+  {
+      "Name": "example_app_default",
+      "Id": "b3441cc3a533bf104df43e4b027024db989eed06884a78696111be4894f2c8a7",
+      "Created": "2021-12-15T16:23:57.905783398Z",
+      "Scope": "local",
+      "Driver": "bridge",
+      "EnableIPv6": false,
+      "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": [
+              {
+                  "Subnet": "172.20.0.0/16",
+                  "Gateway": "172.20.0.1"
+              }
+          ]
+      },
+      "Internal": false,
+      "Attachable": true,
+      "Ingress": false,
+      "ConfigFrom": {
+          "Network": ""
+      },
+      "ConfigOnly": false,
+      "Containers": {
+          "2ddde4cb0131e479d892b7847a6087d1a7e77b7ad8868db1b93edf7c16411680": {
+              "Name": "example_app_backend_1",
+              "EndpointID": "5716e96e0231bcca2471312e7e9cebb7c5952a9f86d2c1d41cbd29f8618b5910",
+              "MacAddress": "02:42:ac:14:00:03",
+              "IPv4Address": "172.20.0.3/16",
+              "IPv6Address": ""
+          },
+          "9f55d17f1dbb296fd714bc1d84859411f28c52ce0b256c4113032488d253b9f6": {
+              "Name": "nginx",
+              "EndpointID": "41420f7f996168a4c304b2ac06ea953cab6f7e6d39edbe32f0fed3de0fad8454",
+              "MacAddress": "02:42:ac:14:00:04",
+              "IPv4Address": "172.20.0.4/16",
+              "IPv6Address": ""
+          },
+          "e310f4d4b2c4dcf203971e79e34f61e85147977a6a047736dc2464b29dba2088": {
+              "Name": "example_app_frontend_1",
+              "EndpointID": "ec2694ee9db63d0ac5f597b16ebee6bd761f67e9c2eb893d47d3363c2d9129a4",
+              "MacAddress": "02:42:ac:14:00:02",
+              "IPv4Address": "172.20.0.2/16",
+              "IPv6Address": ""
+          }
+      },
+      "Options": {},
+      "Labels": {
+          "com.docker.compose.network": "default",
+          "com.docker.compose.project": "example_app",
+          "com.docker.compose.version": "1.25.0"
+      }
+  }
+]
